@@ -35,5 +35,4 @@ jobs:
           REMOTE_USER: ${{ secrets.SSH_USERNAME }}
           ARGS: "-avzr --delete"
           TARGET: ${{ secrets.DEPLOY_FOLDER }}
-          SOURCE: ""
-          EXCLUDE: "/.github/, /node_modules/, /README.md, /.gitignore"
+          SOURCE: "app/"
