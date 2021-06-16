@@ -42,4 +42,5 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.DEPLOY_KEY }}
+          port: 22
           script: cd /www/ # 执行脚本命令
