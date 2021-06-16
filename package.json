@@ -1,0 +1,23 @@
+{
+  "name": "withuserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "socket.io": "^4.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuoSK/withUServer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuoSK/withUServer/issues"
+  },
+  "homepage": "https://github.com/LuoSK/withUServer#readme"
+}
