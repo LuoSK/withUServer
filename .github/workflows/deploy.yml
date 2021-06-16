@@ -19,10 +19,6 @@ jobs:
         with:
           node-version: 14
 
-      # - name: Install Node Dependencies
-      #   run: npm install
-      #   env:
-      #     CI: true
       - name: Create application folder
         run: mkdir application && cp -r app index.js deploy.sh package.json application/
 
@@ -40,6 +36,7 @@ jobs:
         uses: appleboy/ssh-action@v0.1.4
         with:
           host: ${{ secrets.SSH_HOST }}
+          port: 22
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.DEPLOY_KEY }}
           script: cd /www/ # 执行脚本命令
