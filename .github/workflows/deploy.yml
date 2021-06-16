@@ -35,5 +35,6 @@ jobs:
           ARGS: "-avzr --delete"
           TARGET: ${{ secrets.DEPLOY_FOLDER }}
           SOURCE: "application/"
-      # - name: npm Install
-      #   run: npm install
+
+      - name: npm Install
+        run: npm install
