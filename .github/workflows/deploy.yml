@@ -34,8 +34,6 @@ jobs:
 
       - name: Server Start
         uses: JimCronqvist/action-ssh@master
-        env:
-          NAME: ${{ secrets.USERNAME }}
         with:
           hosts: "root@119.29.190.187:22"
           privateKey: ${{ secrets.DEPLOY_KEY }}
