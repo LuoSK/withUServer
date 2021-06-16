@@ -32,11 +32,12 @@ jobs:
           TARGET: ${{ secrets.DEPLOY_FOLDER }}
           SOURCE: "application/"
 
-      - name: Server Start    
-        uses: fifsky/ssh-action@master
+      - name: Server Start
+        uses: JimCronqvist/action-ssh@master
+        env:
+          NAME: ${{ secrets.USERNAME }}
         with:
+          hosts: "root@119.29.190.187:22"
+          privateKey: ${{ secrets.DEPLOY_KEY }}
+          debug: true
           command: cd /www/
-          host: ${{ secrets.SSH_HOST }}
-          user: ${{ secrets.USERNAME }}
-          key: ${{ secrets.DEPLOY_KEY }}
-          
