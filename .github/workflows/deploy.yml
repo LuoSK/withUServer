@@ -35,7 +35,7 @@ jobs:
       - name: Server Start
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: ls -a
+          command: sh /www/withUServer/deploy.sh
           host: ${{ secrets.SSH_HOST }}
           username: root
           privateKey: ${{ secrets.DEPLOY_KEY }}
