@@ -37,9 +37,9 @@ jobs:
           SOURCE: "application/"
 
       - name: Server Start    
-        uses: appleboy/ssh-action@v0.1.4
+        uses: fifsky/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.USERNAME }}
+          user: ${{ secrets.USERNAME }}
           key: ${{ secrets.DEPLOY_KEY }}
-          script: cd /www/ # 执行脚本命令
+          command: sh /www/withUServer/deploy.sh # 执行脚本命令
