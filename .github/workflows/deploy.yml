@@ -24,7 +24,7 @@ jobs:
       #   env:
       #     CI: true
       - name: Create application folder
-        run: mkdir application && cp -r app  application/app && cp -r package.json application/ && cp -r index.js application/
+        run: mkdir application && cp -r app index.js deploy.sh package.json application/
 
       - name: Deploy
         uses: easingthemes/ssh-deploy@v2.0.7
@@ -35,6 +35,11 @@ jobs:
           ARGS: "-avzr --delete"
           TARGET: ${{ secrets.DEPLOY_FOLDER }}
           SOURCE: "application/"
-
-      - name: npm Install
-        run: npm install
+          
+      - name: Server Start    
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.DEPLOY_KEY }}
+          script: sh /www/withUSercer/deploy.sh # 执行脚本命令
