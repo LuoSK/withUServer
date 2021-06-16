@@ -36,5 +36,10 @@ jobs:
           TARGET: ${{ secrets.DEPLOY_FOLDER }}
           SOURCE: "application/"
 
-      - name: Server Start
-        run: "ssh -i ${{ secrets.DEPLOY_KEY }} ${{ secrets.USERNAME }}@${{ secrets.SSH_HOST }} 'sh /www/withUServer/deploy.sh'"
+      - name: Server Start    
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.DEPLOY_KEY }}
+          script: cd /www/ # 执行脚本命令
