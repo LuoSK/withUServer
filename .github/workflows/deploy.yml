@@ -42,4 +42,4 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.DEPLOY_KEY }}
-          script: sh /www/withUSercer/deploy.sh # 执行脚本命令
+          script: sh /www/withUServer/deploy.sh # 执行脚本命令
