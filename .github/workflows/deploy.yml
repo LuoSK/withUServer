@@ -33,9 +33,9 @@ jobs:
           SOURCE: "application/"
 
       - name: Server Start
-        uses: JimCronqvist/action-ssh@master
+        uses: garygrossgarten/github-action-ssh@release
         with:
-          hosts: "root@119.29.190.187:22"
+          command: ls -a
+          host: ${{ secrets.SSH_HOST }}
+          username: root
           privateKey: ${{ secrets.DEPLOY_KEY }}
-          debug: true
-          command: cd /www/
