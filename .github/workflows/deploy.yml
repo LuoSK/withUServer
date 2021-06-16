@@ -34,6 +34,6 @@ jobs:
           REMOTE_USER: ${{ secrets.SSH_USERNAME }}
           ARGS: "-avzr --delete"
           TARGET: ${{ secrets.DEPLOY_FOLDER }}
-          SOURCE: "src/"
+          SOURCE: "application/"
       # - name: npm Install
       #   run: npm install
